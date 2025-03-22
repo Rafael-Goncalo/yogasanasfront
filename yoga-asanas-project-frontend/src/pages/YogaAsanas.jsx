@@ -1,13 +1,15 @@
 import React,{useEffect,useState} from "react";
 import {Link} from "react-router-dom";
+import axios from "axios";
 
 const YogaAsanas=()=>{
   const[data,setData]=useState([]);
 
   useEffect(()=>{
-    fetch("http://localhost:4000/users")
-    .then(res=>res.json())
-    .then(json=>setData(json))
+    axios
+    .get("http://localhost:4000/users")
+    .then(res=>setData(res.data))
+    
     .catch(err=>console.log(err));
 
   },[]);
@@ -19,7 +21,7 @@ const YogaAsanas=()=>{
       {data.map((set)=>(
         <div className="yoga-card" key={set.id}>
           <h3>{set.category}</h3>
-        <Link to={`/asanas/${set.id}`}>
+        <Link to={`/asana-details/${set.id}`}>
           <img src={set.image} alt={set.category} className="card-image"/>
         </Link>
         </div>

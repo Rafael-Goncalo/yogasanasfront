@@ -218,3 +218,46 @@ h2{
   background-color:#ff6e90;
   transform:scale(1.05);
 }
+.asana-card{
+  display:flex;
+  background:#fffdf7;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  margin:20px 0;
+  overflow:hidden;
+}
+.asana-image{
+  width:200px;
+  height:200px;
+  object-fit:cover;
+}
+.asana-content{
+  padding:20px;
+  flex:1;
+}
+.asana-content h3{
+  margin-top:0;
+  color:#3f3f3f;
+}
+.asana-content p{
+  margin:10px 0;
+  line-height:1.4;
+}
+.asana-buttons{
+  margin-top:15px;
+}
+.delete-btn, .edit-btn{
+  padding:8px 12px;
+  margin-right:10px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+.delete-btn{
+  background-color: #e74c3c;
+  color:white;
+}
+.edit-btn{
+  background-color: #3498db;
+  color:white;
+}
