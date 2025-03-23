@@ -219,29 +219,50 @@ h2{
   transform:scale(1.05);
 }
 .asana-card{
-  display:flex;
-  background:#fffdf7;
-  border-radius:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-  margin:20px 0;
+  background: linear-gradient(135deg,#fef9f7,#f5f9ff);
+  border:2px solid #ffd8e0;
+  border-radius:16px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
   overflow:hidden;
+  margin:25px auto;
+  max-width:600px;
+  transition:transform 0.3 ease;
+ 
 }
 .asana-image{
-  width:200px;
-  height:200px;
-  object-fit:cover;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  background-color: #fff4f2;
+    padding:10px;
+  display:block;
+  margin:0 auto;
+  border-bottom:1px solid #eee;
 }
 .asana-content{
   padding:20px;
   flex:1;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .asana-content h3{
-  margin-top:0;
-  color:#3f3f3f;
+  margin-bottom: 10px;
+  font-size:1.5rem;
+  color:#dd3e54;
 }
 .asana-content p{
-  margin:10px 0;
-  line-height:1.4;
+  margin-bottom:10px ;
+font-size:1rem;
+color:#333;
+}
+.instruction-list ul{
+  padding-left:20px;
+  margin-top:10px;
+}
+.instruction-list li{
+  margin-bottom:6px;
+  line-height:1.5;
+  color:#444;
+  
 }
 .asana-buttons{
   margin-top:15px;
@@ -254,10 +275,10 @@ h2{
   cursor:pointer;
 }
 .delete-btn{
-  background-color: #e74c3c;
+  background-color: #ff6b6b;
   color:white;
 }
 .edit-btn{
-  background-color: #3498db;
+  background-color: #4dabf7;
   color:white;
 }
