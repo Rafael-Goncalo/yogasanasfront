@@ -11,6 +11,7 @@ const NavBar=()=>{
             <div className="nav-links">
             <Link to="/asanas">YogaAsanas</Link>
                 <Link to="/about">About Yoga</Link>
+                <Link to="/sequence-asanas">Asanas Sequence</Link>
                
             </div>
             </div>

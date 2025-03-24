@@ -2,6 +2,7 @@ import {useParams} from "react-router-dom";
 import {useEffect,useState} from "react";
 import axios from "axios";
 import Asana from "../components/Asana";
+import {Link} from "react-router-dom";
 
 function AsanaDetails(){
     const {id}=useParams();
@@ -16,22 +17,12 @@ function AsanaDetails(){
             console.log(error);
         })
     },[id]);
-    const handleDelete=(asanaId)=>{
-        const updatedAsanas=yogaSet.asanas.filter(a=>a.id!==asanaId);
-        const updatedYogaSet={...yogaSet,asanas:updatedAsanas};
+   
 
-        axios.put(`http://localhost:4000/users/${id}`,updatedYogaSet)
-        .then(()=>{
-            setYogaSet(updatedYogaSet);
-        })
-        .catch((error)=>console.log(error));
-    };
+if(!yogaSet){
+    return <p>Loading</p>
+}
 
-
-const handleEdit=(asana)=>{
-    alert(`Editing ${asana.name}`);
-    };
-    if(!yogaSet) return <p>Loading...</p>;
  return(
     <div className="asana-details-container">
         <h2>{yogaSet.category}</h2>
@@ -39,11 +30,13 @@ const handleEdit=(asana)=>{
             <Asana 
             key={asana.id}
             asana={asana}
-            onDelete={handleDelete}
-            onEdit={handleEdit}
             />
+           
 
         ))}
+        <div className="sequence-link-container">
+            <Link to="/sequence-asanas" className="view-sequence-btn">View Sequence</Link>
+        </div>
     </div>
  );
 };

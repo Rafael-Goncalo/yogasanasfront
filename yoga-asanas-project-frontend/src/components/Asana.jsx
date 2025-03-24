@@ -1,6 +1,9 @@
+import {useContext} from "react";
+import {AsanaContext} from "../context/AsanaContext";
+
 
 function Asana({asana,onDelete,onEdit}){
-  
+  const {selectAsana}=useContext(AsanaContext);
     return(
         <div className="asana-card">
             <img src={asana.image} alt={asana.name} className="asana-image" />
@@ -21,8 +24,17 @@ function Asana({asana,onDelete,onEdit}){
                 </div>
 
                 <div className="asana-buttons">
-                    <button className="delete-btn" onClick={()=>onDelete(asana.id)}>Delete</button>
-                    <button className="eidt-btn" onClick={()=>onEdit(asana)}>Edit</button>
+                    {onDelete &&(
+                        <button className="delete-btn" onClick={()=>onDelete(asana.id)}>
+                            Delete
+                        </button>
+                    )}
+                     {onEdit &&(
+                        <button className="edit-btn" onClick={()=>onEdit(asana.id)}>
+                            Edit
+                        </button>
+                    )}
+                    <button className="select-btn" onClick={()=>selectAsana(asana)}>Select</button>
 
                 </div>
             </div>
