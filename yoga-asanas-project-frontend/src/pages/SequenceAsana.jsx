@@ -1,10 +1,10 @@
-import {useContext,useState} from "react";
+import {useContext,useState} from "react";//useContext is used to access global context
 import {AsanaContext} from "../context/AsanaContext";
 import Asana from "../components/Asana";
 import {useNavigate} from "react-router-dom";
 
 function SequenceAsana(){
-    const {selectedAsanas,removeAsana,selectedYogaSetId}=useContext(AsanaContext);
+    const {selectedAsanas,removeAsana,selectedYogaSetId}=useContext(AsanaContext);// that shows selected asanas and lets us update and delete
     const [asanas,setAsanas]=useState(selectedAsanas);
     const [editingId,setEditingId]=useState();
 
@@ -15,13 +15,13 @@ function SequenceAsana(){
     const handleDelete=(asanaId)=>{
         const updated=asanas.filter((a)=>a.id!==asanaId);
         setAsanas(updated);
-        removeAsana(asanaId);
+        removeAsana(asanaId);//function to delete
     };
     const handleEdit=(asana)=>{
        navigate("/edit-asana",{
         state:{
             asana,
-            yogaSetId:selectedYogaSetId
+            yogaSetId:selectedYogaSetId//editing a selected yoga id
         }
        })
 };

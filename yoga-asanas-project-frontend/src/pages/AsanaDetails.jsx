@@ -30,6 +30,7 @@ if(!yogaSet){
             <Asana 
             key={asana.id}
             asana={asana}
+            yogaSetId={yogaSet.id}
             />
            
 
