@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage";
 import AsanaDetails from "./pages/AsanaDetails";
 import {AsanaProvider} from "./context/AsanaContext";
 import SequenceAsana from "./pages/SequenceAsana.jsx";
+import UpdateAsana from "./pages/UpdateAsana.jsx";
 
 const App=()=>{
   return(
@@ -23,6 +24,7 @@ const App=()=>{
     <Route path="/about" element={<AboutYoga />} />
     <Route path="/asana-details/:id" element={<AsanaDetails/>} />
     <Route path="/sequence-asanas" element={<SequenceAsana />}/>
+    <Route path="/edit-asana/:asanaId" element={<UpdateAsana />}/>
      </Routes>
     </Router>
     </AsanaProvider>

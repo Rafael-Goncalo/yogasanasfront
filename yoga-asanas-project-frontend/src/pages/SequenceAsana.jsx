@@ -1,10 +1,16 @@
 import {useContext,useState} from "react";
 import {AsanaContext} from "../context/AsanaContext";
 import Asana from "../components/Asana";
+import {useNavigate} from "react-router-dom";
 
 function SequenceAsana(){
-    const {selectedAsanas,removeAsana}=useContext(AsanaContext);
+    const {selectedAsanas,removeAsana,selectedYogaSetId}=useContext(AsanaContext);
     const [asanas,setAsanas]=useState(selectedAsanas);
+    const [editingId,setEditingId]=useState();
+
+    const navigate=useNavigate();
+
+    
 
     const handleDelete=(asanaId)=>{
         const updated=asanas.filter((a)=>a.id!==asanaId);
@@ -12,8 +18,14 @@ function SequenceAsana(){
         removeAsana(asanaId);
     };
     const handleEdit=(asana)=>{
+       navigate("/edit-asana",{
+        state:{
+            asana,
+            yogaSetId:selectedYogaSetId
+        }
+       })
+};
 
-    }
 
     return(
         <div className="sequence-asanas-page">

@@ -1,5 +1,6 @@
 import {useContext} from "react";
 import {AsanaContext} from "../context/AsanaContext";
+import {Link} from "react-router-dom";
 
 
 function Asana({asana,onDelete,onEdit}){
@@ -29,10 +30,13 @@ function Asana({asana,onDelete,onEdit}){
                             Delete
                         </button>
                     )}
+                    
                      {onEdit &&(
+                        <Link to={`/edit-asana/${asana.id}`}>
                         <button className="edit-btn" onClick={()=>onEdit(asana.id)}>
                             Edit
                         </button>
+                        </Link>
                     )}
                     <button className="select-btn" onClick={()=>selectAsana(asana)}>Select</button>
 
