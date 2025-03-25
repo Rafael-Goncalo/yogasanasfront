@@ -15,7 +15,7 @@ const AboutYoga=()=>{
                     <ul>
                         <p><b>Yamas:</b> non-violence, honesty, integrity, efficiency, humbleness </p>
                         <p><b>Nyamas:</b> cleanliness, contentment, discipline, self-study, surrender</p>
-                        <p><b>Asanas:</b> postures</p>
+                        <p><b>Asanas:</b> body consciousness</p>
                         <p><b>Pranayama:</b> Breathing Consiousness</p>
                         <p><b>Pratyahara:</b> abstration of the senses</p>
                         <p><b>Dharana:</b> concentration</p>
