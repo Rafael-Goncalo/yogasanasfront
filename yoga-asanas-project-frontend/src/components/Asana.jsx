@@ -10,7 +10,7 @@ function Asana({asana,onDelete,onEdit}){
             <img src={asana.image} alt={asana.name} className="asana-image" />
             <div className="asana-content">
                 <h3>{asana.name}</h3>
-                <p><strong>Benefits</strong>{asana.benefits}</p>
+                <p><strong>Benefits: </strong>{asana.benefits}</p>
                 <div className="instruction-list">
                 <strong>Instructions:</strong>
                 <ul>
