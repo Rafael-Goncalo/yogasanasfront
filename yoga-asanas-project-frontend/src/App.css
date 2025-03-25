@@ -88,10 +88,11 @@ body,html,#root{
 .about-image{
   width:100%;
   max-width:400px;
-  border-radius:10px;
+  border-radius:5px;
   margin:20px 0;
 }
 .about-text{
+  text-align: justify;
   max-width:600px;
   font-size:18px;
   font-weight:300;
@@ -111,6 +112,7 @@ body,html,#root{
   color:#0077b6;
 }
 .about-text ul{
+  text-align: left;
   list-style-type: disc;
   padding-left:20px;
   color:#444;

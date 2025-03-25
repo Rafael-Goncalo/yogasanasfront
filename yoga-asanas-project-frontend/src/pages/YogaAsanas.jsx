@@ -1,19 +1,18 @@
-import React,{useEffect,useState} from "react";
-import {Link} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
-const YogaAsanas=()=>{
-  const[data,setData]=useState([]);
+const YogaAsanas = () => {
+  const [data, setData] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     axios
-    .get("http://localhost:4000/users")
-    .then(res=>setData(res.data))
-    
-    .catch(err=>console.log(err));
+      .get("http://localhost:4000/users")
+      .then((res) => setData(res.data))
 
-  },[]);
-  return(
+      .catch((err) => console.log(err));
+  }, []);
+  return (
     <main className="asana-page">
       
     <h2 className="page-title">Yoga Asanas</h2>
