@@ -27,7 +27,9 @@ const YogaAsanas = () => {
        </div>
       ))}
     </div>
+    <div className="add-button-container">
     <Link to="/addAsana" className="add-asana-btn">Add new Asana</Link>
+    </div>
     </main>
   );
 };

@@ -31,6 +31,7 @@ function AddAsana(){
         }
     }
     return(
+        <main className="add-page">
         <div className="add-asana-container">
             <h2>Add new Asana</h2>
             <form onSubmit={handleSubmit}>
@@ -41,6 +42,7 @@ function AddAsana(){
                 <button type="submit">Add Asana</button>
             </form>
         </div>
+        </main>
     );
 }
 export default AddAsana;
