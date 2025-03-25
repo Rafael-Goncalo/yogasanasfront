@@ -15,6 +15,7 @@ const YogaAsanas=()=>{
   },[]);
   return(
     <main className="asana-page">
+      
     <h2 className="page-title">Yoga Asanas</h2>
     <div className="card-container">
   
@@ -24,9 +25,10 @@ const YogaAsanas=()=>{
         <Link to={`/asana-details/${set.id}`}>
           <img src={set.image} alt={set.category} className="card-image"/>
         </Link>
-        </div>
+       </div>
       ))}
     </div>
+    <Link to="/addAsana" className="add-asana-btn">Add new Asana</Link>
     </main>
   );
 };
