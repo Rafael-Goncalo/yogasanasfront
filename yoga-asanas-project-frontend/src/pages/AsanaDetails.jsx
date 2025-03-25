@@ -36,7 +36,7 @@ if(!yogaSet){
 
         ))}
         <div className="sequence-link-container">
-            <Link to="/sequence-asanas" className="view-sequence-btn">View Sequence</Link>
+            {/* <Link to="/sequence-asanas" className="view-sequence-btn">View Sequence</Link> */}
         </div>
     </div>
  );
