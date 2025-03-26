@@ -25,7 +25,7 @@ function AddAsana(){
     async function handleSubmit(e){
         e.preventDefault();
         try{
-            const res=await axios.post('http://localhost:4000/users',formData);
+            const res=await axios.post(`${API_URL}/users`,formData);
             alert("New asana added");
             navigate("/asanas",{state:{createdId:res.data.id}});
         }catch(error){

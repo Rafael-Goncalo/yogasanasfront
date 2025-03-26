@@ -56,7 +56,7 @@ instruction: updatedAsana.instruction
           return a;
         }
       });
-
+      
       const updatedYogaSet = {
         ...yogaSet,
         asanas: updatedAsanas,
