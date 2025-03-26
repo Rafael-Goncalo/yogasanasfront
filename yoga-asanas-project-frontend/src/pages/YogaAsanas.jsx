@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link ,useLocation} from "react-router-dom";
 import axios from "axios";
 
 const YogaAsanas = () => {
   const [data, setData] = useState([]);
+  const [createdId,setCreatedId]=useState();
+  const location=useLocation();
+
+  useEffect(()=>{
+    if(location.state && location.state.createdId){
+      setCreatedId(location.state.createdId);
+    }
+  },[location.state]);
 
   useEffect(() => {
     axios
@@ -12,6 +20,18 @@ const YogaAsanas = () => {
 
       .catch((err) => console.log(err));
   }, []);
+
+  const handleDelete=(id)=>{
+    axios.delete(`http://localhost:4000/users/${id}`)
+    .then(()=>{
+      alert("deleted");
+      setData((prev)=>prev.filter((item)=>item.id!==id));
+      if(id===createdId){
+      setCreatedId();
+      }
+    }).catch(err=>console.log(err))
+  };
+
   return (
     <main className="asana-page">
       
@@ -24,6 +44,9 @@ const YogaAsanas = () => {
         <Link to={`/asana-details/${set.id}`}>
           <img src={set.image} alt={set.category} className="card-image"/>
         </Link>
+        {set.id===createdId &&(
+        <button className="delete-btn" onClick={()=>handleDelete(set.id)}>delete</button>
+      )}
        </div>
       ))}
     </div>

@@ -10,7 +10,7 @@ function Asana({ asana, onDelete, onEdit }) {
       <div className="asana-content">
         <h3>{asana.name}</h3>
         <p>
-          <strong>Benefits: </strong>
+          <strong> </strong>
           {asana.benefits}
         </p>
         <div className="instruction-list">
