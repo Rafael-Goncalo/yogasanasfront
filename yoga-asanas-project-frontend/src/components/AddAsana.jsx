@@ -10,6 +10,8 @@ function AddAsana(){
         image:"",
         category:""
     });
+
+    const [createdAsana, setCreatedAsana] = useState ()
     const navigate=useNavigate();
 
     function handleChange(e){
@@ -19,6 +21,7 @@ function AddAsana(){
         });
     }
 
+    
     async function handleSubmit(e){
         e.preventDefault();
         try{
@@ -30,6 +33,18 @@ function AddAsana(){
             alert("something went wrong");
         }
     }
+const handleDelete = (id) => {
+    if (!createdAsana)
+        return ;
+    axios.delete(`http://localhost:4000/users/${createdAsana.id}`)
+    .then (()=>{
+        alert("Deleted Successful")
+        setCreatedAsana ();
+    });
+    
+    };
+
+
     return(
         <main className="add-page">
         <div className="add-asana-container">
@@ -41,7 +56,19 @@ function AddAsana(){
                 <textarea name="description" placeholder="Description" value={formData.description} onChange={handleChange} />
                 <button type="submit">Add Asana</button>
             </form>
-        </div>
+           </div>
+
+           {createdAsana &&(
+            <div className="single-created-asana">
+                <h3>{createdAsana.name}</h3>
+                <img src={createdAsana.image} alt={createdAsana}/>
+                <p>{createdAsana.category}</p>
+                <p>{createdAsana.description}</p>
+                <button className="delete-btn" onClick={()=>handleDelete(createdAsana.id)}>Delete</button>
+            </div>
+           )}
+
+
         </main>
     );
 }

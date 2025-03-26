@@ -32,7 +32,7 @@ if(!yogaSet){
             asana={asana}
             yogaSetId={yogaSet.id}
             />
-           
+        
 
         ))}
         
