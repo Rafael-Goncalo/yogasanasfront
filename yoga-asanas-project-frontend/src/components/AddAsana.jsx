@@ -1,7 +1,7 @@
 import axios from "axios";
 import {useNavigate} from "react-router-dom"
 import {useState} from "react";
-import { API_URL } from "./config/config.js";
+import { API_URL } from "../config/config.js";
 
 
 function AddAsana(){

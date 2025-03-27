@@ -1,7 +1,7 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { API_URL } from "./config/config.js";
+import { API_URL } from "../config/config.js";
 
 function UpdateAsana() {
   const { asanaId } = useParams();
