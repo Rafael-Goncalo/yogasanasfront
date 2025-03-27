@@ -15,20 +15,19 @@ import AddAsana from "./components/AddAsana.jsx";
 const App = () => {
   return (
     <AsanaProvider>
-    <Router>
-      <NavBar />
-     
-      <Routes>
-        
-      <Route path="/" element={<HomePage />} />  
-    <Route path="/asanas" element={<YogaAsanas />} />
-    <Route path="/about" element={<AboutYoga />} />
-    <Route path="/asana-details/:id" element={<AsanaDetails/>} />
-    <Route path="/sequence-asanas" element={<SequenceAsana />}/>
-    <Route path="/edit-asana/:asanaId" element={<UpdateAsana />}/>
-    <Route path="/addAsana" element={<AddAsana />} />
-     </Routes>
-    </Router>
+      <Router>
+        <NavBar />
+
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/asanas" element={<YogaAsanas />} />
+          <Route path="/about" element={<AboutYoga />} />
+          <Route path="/asana-details/:id" element={<AsanaDetails />} />
+          <Route path="/sequence-asanas" element={<SequenceAsana />} />
+          <Route path="/edit-asana/:asanaId" element={<UpdateAsana />} />
+          <Route path="/addAsana" element={<AddAsana />} />
+        </Routes>
+      </Router>
     </AsanaProvider>
   );
 };
