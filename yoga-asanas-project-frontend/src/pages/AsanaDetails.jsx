@@ -1,3 +1,4 @@
+import { API_URL } from "../config/config";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -9,7 +10,7 @@ function AsanaDetails(){
     const [yogaSet, setYogaSet]=useState();
 
     useEffect(()=>{
-        axios.get(`http://localhost:4000/users/${id}`)
+        axios.get(`${API_URL}/users/${id}`)
         .then((response)=>{
             setYogaSet(response.data);
         })

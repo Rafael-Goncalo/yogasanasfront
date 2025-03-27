@@ -1,6 +1,7 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { API_URL } from "../config/config";
 
 function UpdateAsana() {
   const { asanaId } = useParams();
@@ -20,7 +21,7 @@ function UpdateAsana() {
   // Pre-fill the form with selected asana details
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/users/${asanaId[0]}`)
+      .get(`${API_URL}/users/${asanaId[0]}`)
       .then((res) => {
         const yogaSet = res.data.asanas.find(
           (oneAsana) => oneAsana.id == asanaId
@@ -47,7 +48,7 @@ instruction: updatedAsana.instruction
 : []
 };*/
 
-    axios.get(`http://localhost:4000/users/${asanaId[0]}`).then((res) => {
+    axios.get(`${API_URL}/users/${asanaId[0]}`).then((res) => {
       const yogaSet = res.data;
       const updatedAsanas = yogaSet.asanas.map((a) => {
         if (a.id == asanaId) {
@@ -63,7 +64,7 @@ instruction: updatedAsana.instruction
       };
 
       axios
-        .put(`http://localhost:4000/users/${asanaId[0]}`, updatedYogaSet)
+        .put(`${API_URL}/users/${asanaId[0]}`, updatedYogaSet)
         .then(() => {
           alert("Asana updated!");
           navigate("/sequence-asanas");
